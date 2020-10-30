@@ -4,12 +4,11 @@ const bcrypt = require('bcrypt-nodejs');
 const knex=require('knex');
 const db  = knex({
   client: 'pg',
-  connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : 'imad',
-    database : 'postgres'
-  }
+  connection:{ connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }}
+ 
 });
 
 const app= express();
@@ -26,7 +25,7 @@ const signin = require('./controllers/signin');
 const image = require('./controllers/image');
 
 app.get('/',(req,res)=>{
-res.send(database.user);
+res.send('goooooood');
 
 })
 
@@ -59,4 +58,7 @@ app.post('/register',(req,res)=>{
 
 
 
-app.listen('3000')
+app.listen(process.env.PORT ||3000,()=>{
+console.log(`app is runnig on port ${process.env.PORT }`)
+
+})

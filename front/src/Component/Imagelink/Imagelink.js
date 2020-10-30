@@ -7,7 +7,7 @@ const Imagelink=({onInputChange,onSubmit})=>{
     <div>
     
    <p className='f3 center'>
-                  {'This Magic Brain will detect faces in your pictures. Git it a try.'}
+                  {'This Magic Brain will detect faces in your pictures. Give it a try.'}
 
    </p>
    <div className='center'> 

@@ -67,7 +67,7 @@ this.setState({input:event.target.value})
   }
   onSubmit=()=>{
     this.setState({imageurl:this.state.input})
-    fetch('http://localhost:3000/imageurl', {
+    fetch('https://obscure-tundra-66565.herokuapp.com/imageurl', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -78,7 +78,7 @@ this.setState({input:event.target.value})
     .then(response => {
      
        if (response) {
-        fetch('http://localhost:3000/image',{
+        fetch('https://obscure-tundra-66565.herokuapp.com/image',{
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -144,14 +144,14 @@ this.setState({user:{
     <div className='App'>
     <Particles className="particles"
     params={{
-	   // "particles": {
-	    //    "number": {
-	     //       "value": 200
-	     //   },
-	      //  "size": {
-	      //      "value": 2
-	     //   }
-	  //  },
+	    "particles": {
+	        "number": {
+	            "value": 200
+	        },
+	        "size": {
+	            "value": 2
+	        }
+	    },
 	    
 	}} />
   
