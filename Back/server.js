@@ -17,30 +17,8 @@ app.use(cors());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
-const database={
-    user:[
-        {
-    id:'123',
-    name:'john',
-    email:'john@gmail.com',
-    password:'156',
-    entries:0,
-    joined:new Date()
-    
-    
-    },
-    {
-        id:'124',
-        name:'sally',
-        email:'sally@gmail.com',
-        password:'banna',
-        entries:0,
-        joined:new Date()
-        
-        
-        }
-]
-}
+
+
 
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
